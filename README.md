@@ -3,9 +3,10 @@ The printf project was made by [Abdallah Mahmoud](https://github.com/abdamah) an
 
 ## Read or watch:
 
-- [Secrets of printf]
-- [Group Projects (Don’t forget to read this)]
-- [Flowcharts]
+- [Secrets of printf](https://www.cypress.com/file/54761/download)
+- [Pair Programming](https://alx-intranet.hbtn.io/concepts/121)
+- [Group Projects](https://alx-intranet.hbtn.io/concepts/111)
+- [Flowcharts](https://alx-intranet.hbtn.io/concepts/130)
 
 ## man or help:
 - printf (3)
