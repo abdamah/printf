@@ -42,7 +42,7 @@ int printSpecifiers(char next, va_list arg)
  * write output to stdout, the standard output stream
  * @format: character string composed of zero or more directives
  *
- * Return: the number of characters printed
+ * Return: the number of characters that were printed
  * (excluding the null byte used to end output to strings)
  * return -1 for incomplete identifier error
  */
