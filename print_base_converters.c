@@ -30,7 +30,7 @@ int print_oct(va_list arg)
 	unsigned int num = va_arg(arg, unsigned int);
 	unsigned int copy;
 	char *octa;
-	int i, j, charPrinted = 0;
+	int i, j = 0, charPrinted = 0;
 
 	if (num == 0)
 		return (_putchar('0'));
