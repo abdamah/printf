@@ -18,6 +18,7 @@ int print_hex_base(va_list arg, char _case);
 int print_hex(va_list arg);
 int print_HEX(va_list arg);
 int print_STR(va_list arg);
+int  rev_string(va_list arg);
 
 /**
  * struct identifierStruct - defingin specifier struct type for print
