@@ -3,23 +3,23 @@
 #include <stdio.h>
 
 /**
- * print_specifiers - prints special characters
+ * printIdentifiers - prints special characters
  * @next: character after the %
- * @arg: argument for the specifier
+ * @arg: argument for the indentifier
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  */
 
-int print_specifiers(char next, va_list arg)
+int printIdentifiers(char next, va_list arg)
 {
-	int index;
+	int functsIndex;
 
-	specifiers utils[] = {
+	identifierStruct functs[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{"d", print_int},
 		{"i", print_int},
-		{"u", print_unsignedInt},
+		{"u", print_unsigned},
 		{"b", print_unsignedToBinary},
 		{"o", print_oct},
 		{"x", print_hex},
@@ -28,10 +28,10 @@ int print_specifiers(char next, va_list arg)
 		{NULL, NULL}
 	};
 
-	for (index = 0; utils[index].specifier != NULL; index++)
+	for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
 	{
-		if (utils[index].specifier[0] == next)
-			return (utils[index].print(arg));
+		if (functs[functsIndex].indentifier[0] == next)
+			return (functs[functsIndex].printer(arg));
 	}
 	return (0);
 }
@@ -44,48 +44,49 @@ int print_specifiers(char next, va_list arg)
  *
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
- * return -1 for incomplete specifier error
+ * return -1 for incomplete identifier error
  */
 
 int _printf(const char *format, ...)
 {
 	unsigned int i;
-	int printSpecifier = 0, printChar = 0;
+	int identifierPrinted = 0, charPrinted = 0;
 	va_list arg;
 
 	va_start(arg, format);
 	if (format == NULL)
 		return (-1);
+
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			printChar++;
+			charPrinted++;
 			continue;
 		}
 		if (format[i + 1] == '%')
 		{
 			_putchar('%');
-			printChar++;
+			charPrinted++;
 			i++;
 			continue;
 		}
 		if (format[i + 1] == '\0')
 			return (-1);
 
-		printSpecifier = print_specifiers(format[i + 1], arg);
-		if (printSpecifier == -1 || printSpecifier != 0)
+		identifierPrinted = printIdentifiers(format[i + 1], arg);
+		if (identifierPrinted == -1 || identifierPrinted != 0)
 			i++;
-		if (printSpecifier > 0)
-			printChar += printSpecifier;
+		if (identifierPrinted > 0)
+			charPrinted += identifierPrinted;
 
-		if (printSpecifier == 0)
+		if (identifierPrinted == 0)
 		{
 			_putchar('%');
-			printChar++;
+			charPrinted++;
 		}
 	}
 	va_end(arg);
-	return (printChar);
+	return (charPrinted);
 }

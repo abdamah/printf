@@ -10,13 +10,13 @@
 int print_hex_base(va_list arg, char _case)
 {
 	unsigned int num = va_arg(arg, unsigned int);
-	int characters;
+	int nbrCharacters;
 
 	if (num == 0)
 		return (_putchar('0'));
-	characters = print_unsignedIntToHex(num, _case);
+	nbrCharacters = print_unsignedIntToHex(num, _case);
 
-	return (characters);
+	return (nbrCharacters);
 }
 /**
  * print_hex - prints a hexadecimal in lower case
