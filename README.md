@@ -27,7 +27,6 @@ Write a function that produces output according to a format.
 - You don’t have to handle precision
 - You don’t have to handle the length modifiers
 
-- **Repo:** printf
 1. **Education is when you read the fine print. Experience is what you get ifyou don't mandatory**
 
 Handle the following conversion specifiers:
