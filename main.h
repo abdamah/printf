@@ -5,7 +5,7 @@
 
 int _putchar(char c);
 int print_int(va_list arg);
-int print_unsigned(va_list arg);
+int print_unsignedInt(va_list arg);
 int _printf(const char *format, ...);
 int print_char(va_list arg);
 int print_str(va_list arg);
@@ -20,14 +20,14 @@ int print_HEX(va_list arg);
 int print_STR(va_list arg);
 
 /**
- * struct identifierStruct - structure definition of a printTypeStruct
- * @indentifier: type
- * @printer: function to print
+ * struct specifiers - defining struct type of print specifiers
+ * @specifier: type
+ * @print: function to print
  */
-typedef struct identifierStruct
+typedef struct specifiers
 {
-char *indentifier;
-int (*printer)(va_list);
-} identifierStruct;
+char *specifier;
+int (*print)(va_list);
+} specifiers;
 
 #endif

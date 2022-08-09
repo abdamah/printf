@@ -2,11 +2,10 @@
 #include <unistd.h>
 #include <stdio.h>
 /**
- * print_char - writes the character c to stdout
+ * print_char -prints the character c to stdout
  * @arg: argument
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: On success 1, otherwise error
  */
 int print_char(va_list arg)
 {
@@ -22,31 +21,31 @@ int print_char(va_list arg)
 int print_int(va_list arg)
 {
 
-unsigned int divisor = 1, i, resp, charPrinted = 0;
+unsigned int divisor = 1, i, result, printChar = 0;
 int n = va_arg(arg, int);
 
 if (n < 0)
 {
 	_putchar('-');
-	charPrinted++;
+	printChar++;
 	n *= -1;
 }
 
 for (i = 0; n / divisor > 9; i++, divisor *= 10)
 ;
 
-for (; divisor >= 1; n %= divisor, divisor /= 10, charPrinted++)
+for (; divisor >= 1; n %= divisor, divisor /= 10, printChar++)
 {
-	resp = n / divisor;
-	_putchar('0' + resp);
+	result = n / divisor;
+	_putchar('0' + result);
 }
-return (charPrinted);
+return (printChar);
 }
 
 
 
 /**
- * print_STR - prints a string with a `S` (upper case) specificer
+ * print_STR - prints a string with a `S` specificer with upper case.
  * @arg: argument
  * Return: number of character printed
  */
@@ -80,7 +79,7 @@ return (i);
 }
 
 /**
- * print_str - prints a string with a `s` (lower case) specifier
+ * print_str - prints a string with a `s` specifier with lower case.
  * @arg: argument
  * Return: number of character printed
  */
@@ -102,14 +101,14 @@ return (i);
 }
 
 /**
- * print_unsigned - prints an unsigned int.
+ * print_unsignedInt - prints an unsigned int.
  * @arg: argument
  * Return: 0
  */
 
-int print_unsigned(va_list arg)
+int print_unsignedInt(va_list arg)
 {
-int divisor = 1, i, resp;
+int divisor = 1, i, result;
 unsigned int n = va_arg(arg, unsigned int);
 
 for (i = 0; n / divisor > 9; i++, divisor *= 10)
@@ -117,8 +116,8 @@ for (i = 0; n / divisor > 9; i++, divisor *= 10)
 
 for (; divisor >= 1; n %= divisor, divisor /= 10)
 {
-	resp = n / divisor;
-	_putchar('0' + resp);
+	result = n / divisor;
+	_putchar('0' + result);
 }
 return (i + 1);
 }
