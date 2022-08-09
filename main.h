@@ -19,11 +19,12 @@ int print_hex(va_list arg);
 int print_HEX(va_list arg);
 int print_STR(va_list arg);
 int  rev_string(va_list arg);
+int rot13(va_list arg);
 
 /**
- * struct identifierStruct - defingin specifier struct type for print
- * * @indentifier: type
- * @printer: function to print
+ * struct specifiers - defingin specifier struct type for print
+ * * @specifier: type
+ * @print: function to print
  */
 typedef struct specifiers
 {

@@ -26,6 +26,7 @@ int printSpecifiers(char next, va_list arg)
 		{"X", print_HEX},
 		{"S", print_STR},
 		{"r", rev_string},
+		{"R",rot13},
 		{NULL, NULL}
 	};
 
