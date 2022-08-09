@@ -14,7 +14,6 @@ unsigned int n = va_arg(arg, unsigned int);
 unsigned int printed;
 
 print_binary(n, &printed);
-print_binary(n, &printed);
 
 return (printed);
 }
