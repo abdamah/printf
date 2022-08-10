@@ -14,6 +14,9 @@ int  rev_string(va_list arg)
 	while (s[j])
 		j++;
 
+	if (j == 0)
+		return (_putchar('\b'));
+
 	for (i = j - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
