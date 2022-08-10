@@ -6,7 +6,7 @@
  * @arg: argument
  *
  * Return: On success 1.
- * On error, -1 is returned,otherwise erro.
+ * On error, -1 is returned, otherwise error.
  */
 int print_char(va_list arg)
 {
