@@ -5,11 +5,10 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-/*star test*/
+
 int print_strlen(char *s);
 void print_puts(char *str);
 int print_ptr(va_list arg);
-/*end test*/
 
 int _putchar(char c);
 int print_int(va_list arg);
