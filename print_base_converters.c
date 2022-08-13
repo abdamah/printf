@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdlib.h>
-
 /**
  * print_unsignedToBinary - prints an integer.
  * @arg: argument
@@ -88,4 +85,55 @@ int print_unsignedIntToHex(unsigned int num, char _case)
 		_putchar(numhex[j]);
 	free(numhex);
 	return (nbrCharacters);
+}
+
+/**
+ * print_ptr - print_base16_upper_lower
+ * @arg: va_list parameter
+ * Description: This function print address pointer
+ * in representation parameter for print hexadecimalimal format
+ * Return: address pointer
+ */
+
+int print_ptr(va_list arg)
+{
+	unsigned long int decimal, buffer;
+	char character[100];
+	int count, n, i;
+
+	decimal = (unsigned long int)va_arg(arg, void*);
+	buffer = decimal;
+	count = 1;
+	i = 0;
+
+	if (!decimal)
+	{
+		print_puts("(nil)");
+		return (5);
+	}
+	while (buffer)
+	{
+		buffer /= 16;
+		count++;
+	}
+	character[count + 1] = '\0';
+	while (decimal > 0)
+	{
+		n = (decimal % 16);
+		if (n >= 0 && n <= 9)
+			character[count] = ((char)(n + '0'));
+		else
+			character[count] = ((char)(n + 'W'));
+		count--;
+		decimal /= 16;
+	}
+	character[0] = '0';
+	character[1] = 'x';
+
+	while (character[i] != '\0')
+	{
+		_putchar(character[i]);
+		i++;
+	}
+	return (i);
 }
