@@ -57,7 +57,7 @@ int i;
 char *str = va_arg(arg, char*);
 
 if (str == NULL)
-	str = "(null)";
+	return (-1);
 else if (*str == '\0')
 	return (-1);
 
@@ -91,7 +91,7 @@ int i;
 char *str = va_arg(arg, char*);
 
 if (str == NULL)
-	str = "(null)";
+	return (-1);
 else if (*str == '\0')
 	return (-1);
 
